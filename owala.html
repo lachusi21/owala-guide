@@ -1,0 +1,805 @@
+<title>Owala 水壺檔案</title>
+<meta name="description" content="Owala 水壺的發明故事、爆紅行銷，以及台灣熱門款式與正規購買通路。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<style>
+:root{
+  --ground:#EEF4F3;
+  --surface:#FFFFFF;
+  --surface-2:#E1ECEA;
+  --ink:#10292A;
+  --ink-soft:#4E6766;
+  --line:#C9D9D6;
+  --teal:#0B7F77;
+  --teal-fill:#12A195;
+  --pink:#E2466F;
+  --pink-fill:#F2638A;
+  --butter:#F3C23F;
+  --ok:#0B7F77;
+  --ok-bg:#D5EEEA;
+  --warn:#9A5B00;
+  --warn-bg:#FBEBC8;
+  --link:#0B6F68;
+  --shadow:0 1px 0 rgba(16,41,42,.06),0 10px 30px -18px rgba(16,41,42,.35);
+  --f-display:"Bricolage Grotesque","Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0C1817;
+    --surface:#132322;
+    --surface-2:#1A2F2D;
+    --ink:#E4EFED;
+    --ink-soft:#9BB3B0;
+    --line:#29423F;
+    --teal:#4FCABE;
+    --teal-fill:#2BA99D;
+    --pink:#FF809F;
+    --pink-fill:#F2638A;
+    --butter:#F0C955;
+    --ok:#6FD8CC;
+    --ok-bg:#173B37;
+    --warn:#F3C766;
+    --warn-bg:#3A2E14;
+    --link:#6FD8CC;
+    --shadow:0 1px 0 rgba(0,0,0,.3),0 12px 30px -18px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0C1817;
+  --surface:#132322;
+  --surface-2:#1A2F2D;
+  --ink:#E4EFED;
+  --ink-soft:#9BB3B0;
+  --line:#29423F;
+  --teal:#4FCABE;
+  --teal-fill:#2BA99D;
+  --pink:#FF809F;
+  --pink-fill:#F2638A;
+  --butter:#F0C955;
+  --ok:#6FD8CC;
+  --ok-bg:#173B37;
+  --warn:#F3C766;
+  --warn-bg:#3A2E14;
+  --link:#6FD8CC;
+  --shadow:0 1px 0 rgba(0,0,0,.3),0 12px 30px -18px rgba(0,0,0,.8);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ground);
+  color:var(--ink);
+  font-family:var(--f-body);
+  font-size:16px;
+  line-height:1.75;
+  padding-inline:20px;
+  padding-block:0 64px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--link);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--pink);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin-inline:auto}
+h1,h2,h3{text-wrap:balance;margin:0;line-height:1.2}
+p{margin:0}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.eyebrow{
+  font-family:var(--f-mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-soft);
+}
+
+/* ---------- top nav ---------- */
+.topnav{
+  display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between;
+  padding-block:18px;border-bottom:1px solid var(--line);
+}
+.brandmark{font-family:var(--f-display);font-weight:800;font-size:20px;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.brandmark span{color:var(--pink)}
+.topnav nav{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:14px}
+.topnav nav a{color:var(--ink-soft);text-decoration:none}
+.topnav nav a:hover{color:var(--ink)}
+
+/* ---------- hero ---------- */
+.hero{
+  display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:32px;align-items:center;
+  padding-block:56px 40px;
+}
+.hero h1{
+  font-family:var(--f-body);font-weight:900;font-size:clamp(40px,7vw,76px);letter-spacing:-.02em;line-height:1.08;
+}
+.hero h1 .l2{display:block;color:var(--teal)}
+.hero .lede{margin-top:22px;font-size:18px;color:var(--ink-soft);max-width:34em}
+.hero .lede b{color:var(--ink);font-weight:700}
+.hero-meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
+.chip{
+  display:inline-flex;align-items:center;gap:6px;font-size:13px;line-height:1;
+  padding:7px 11px;border-radius:999px;background:var(--surface-2);color:var(--ink);
+}
+.chip.ok{background:var(--ok-bg);color:var(--ok)}
+.chip.warn{background:var(--warn-bg);color:var(--warn)}
+
+.bottle-stage{
+  position:relative;display:grid;place-items:center;
+  background:var(--surface);border:1px solid var(--line);border-radius:28px;
+  padding:28px 20px 22px;box-shadow:var(--shadow);
+}
+.bottle-stage svg{width:min(190px,60%);height:auto;overflow:visible}
+.bottle{transform-origin:100px 330px;transform-box:view-box;animation:tilt 6s ease-in-out infinite}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;margin-top:14px}
+.mode{
+  border-radius:14px;padding:10px 12px;background:var(--surface-2);font-size:14px;line-height:1.45;
+  animation:modeA 6s ease-in-out infinite;
+}
+.mode b{display:block;font-family:var(--f-display);font-size:15px}
+.mode small{color:var(--ink-soft)}
+.mode.b{animation-name:modeB}
+@keyframes tilt{
+  0%,38%{transform:rotate(0)}
+  50%,88%{transform:rotate(-32deg)}
+  100%{transform:rotate(0)}
+}
+@keyframes modeA{
+  0%,38%{background:var(--ok-bg);box-shadow:inset 0 0 0 1.5px var(--teal)}
+  50%,88%{background:var(--surface-2);box-shadow:inset 0 0 0 1.5px transparent}
+  100%{background:var(--ok-bg);box-shadow:inset 0 0 0 1.5px var(--teal)}
+}
+@keyframes modeB{
+  0%,38%{background:var(--surface-2);box-shadow:inset 0 0 0 1.5px transparent}
+  50%,88%{background:var(--ok-bg);box-shadow:inset 0 0 0 1.5px var(--teal)}
+  100%{background:var(--surface-2);box-shadow:inset 0 0 0 1.5px transparent}
+}
+@media (prefers-reduced-motion: reduce){
+  .bottle,.mode{animation:none}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- chapter ---------- */
+.chapter{padding-block:56px 8px;border-top:1px solid var(--line)}
+.chapter-head{display:grid;grid-template-columns:auto 1fr;gap:6px 22px;align-items:end;margin-bottom:34px}
+.chapter-no{
+  grid-row:span 2;font-family:var(--f-display);font-weight:800;font-size:clamp(64px,10vw,112px);
+  line-height:.8;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:2px var(--teal);
+}
+.chapter h2{font-weight:900;font-size:clamp(28px,4.2vw,42px);letter-spacing:-.01em}
+.chapter-intro{max-width:40em;color:var(--ink-soft);font-size:17px;margin-bottom:34px}
+h3{font-size:20px;font-weight:700}
+.sub{margin-block:48px 18px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.sub p{color:var(--ink-soft);font-size:15px}
+
+/* ---------- timeline ---------- */
+.timeline{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.timeline li{
+  display:grid;grid-template-columns:128px 1fr;gap:4px 28px;
+  padding-block:20px;border-bottom:1px dashed var(--line);
+}
+.timeline li:first-child{padding-top:0}
+.t-when{font-family:var(--f-mono);font-size:14px;color:var(--teal);font-weight:500;padding-top:3px}
+.t-body h3{font-size:19px;margin-bottom:6px}
+.t-body p{max-width:44em;color:var(--ink-soft)}
+.t-body p b{color:var(--ink)}
+.timeline li.fail .t-when{color:var(--pink)}
+.timeline li.fail h3::after{
+  content:"轉折點";font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;font-weight:500;
+  margin-left:10px;padding:3px 8px;border-radius:999px;vertical-align:3px;
+  background:var(--pink);color:var(--surface);
+}
+
+.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:34px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:22px 24px}
+.panel h3{margin-bottom:10px}
+.panel p{color:var(--ink-soft)}
+.panel p + p{margin-top:10px}
+.versus{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;margin-block:14px 12px;text-align:center}
+.versus div{background:var(--surface-2);border-radius:14px;padding:12px 8px}
+.versus b{display:block;font-size:17px}
+.versus small{color:var(--ink-soft);font-size:13px}
+.versus .vs{font-family:var(--f-display);font-weight:800;color:var(--pink);background:none;padding:0}
+
+/* ---------- stats ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.stat{background:var(--surface);padding:20px 20px 18px}
+.stat .num{font-family:var(--f-display);font-weight:800;font-size:clamp(30px,4vw,42px);letter-spacing:-.02em;line-height:1;color:var(--ink)}
+.stat .num small{font-size:.5em;font-weight:500;margin-left:2px;color:var(--ink-soft)}
+.stat p{margin-top:10px;font-size:14px;line-height:1.55;color:var(--ink-soft)}
+.src{font-family:var(--f-mono);font-size:11.5px;color:var(--ink-soft);opacity:.85;margin-top:6px;display:block}
+
+/* ---------- tactics ---------- */
+.tactics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 34px}
+.tactic{padding-block:20px;border-top:2px solid var(--ink)}
+.tactic .tag{font-family:var(--f-mono);font-size:12px;color:var(--teal);letter-spacing:.06em}
+.tactic h3{margin-block:6px 8px;font-size:18px}
+.tactic p{font-size:15px;color:var(--ink-soft)}
+
+/* ---------- viral moments ---------- */
+.moments{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.moment{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.moment .when{font-family:var(--f-mono);font-size:13px;color:var(--pink)}
+.moment h3{font-size:18px}
+.moment p{font-size:15px;color:var(--ink-soft)}
+.moment .big{font-family:var(--f-display);font-weight:800;font-size:26px;color:var(--ink);line-height:1.1;margin-top:auto;padding-top:6px}
+.moment .big small{display:block;font-family:var(--f-body);font-weight:400;font-size:13px;color:var(--ink-soft)}
+
+/* ---------- people ---------- */
+.people{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.person{
+  background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px;
+  display:flex;flex-direction:column;gap:12px;
+}
+.person.verified{border-color:var(--teal);box-shadow:var(--shadow)}
+.person-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.person h3{font-size:21px}
+.person .role{font-size:13.5px;color:var(--ink-soft)}
+.person .evidence{font-size:15px;color:var(--ink-soft)}
+.person .evidence b{color:var(--ink)}
+.links{list-style:none;margin:auto 0 0;padding:0;display:grid;gap:8px}
+.links a{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  padding:10px 14px;border-radius:12px;background:var(--surface-2);
+  color:var(--ink);text-decoration:none;font-size:14.5px;line-height:1.35;
+}
+.links a:hover{background:var(--ok-bg);color:var(--ok)}
+.links a .kind{font-family:var(--f-mono);font-size:11.5px;color:var(--ink-soft);white-space:nowrap}
+.links a:hover .kind{color:var(--ok)}
+.footnote{margin-top:16px;font-size:14px;color:var(--ink-soft);max-width:52em}
+
+/* ---------- models ---------- */
+.models{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.model{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:12px}
+.model .for{font-size:13.5px;color:var(--teal);font-weight:500}
+.model h3{font-family:var(--f-display);font-weight:800;font-size:22px;letter-spacing:-.01em}
+.model h3 span{font-family:var(--f-mono);font-weight:400;font-size:14px;color:var(--ink-soft);margin-left:6px}
+.price{display:flex;align-items:baseline;gap:10px}
+.price .now{font-family:var(--f-display);font-weight:800;font-size:30px;line-height:1}
+.price s{font-family:var(--f-mono);font-size:14px;color:var(--ink-soft)}
+.model p{font-size:15px;color:var(--ink-soft)}
+.swatches{display:flex;flex-wrap:wrap;gap:6px}
+.swatches span{font-size:13px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--ink)}
+.model .links{margin-top:auto}
+
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:18px;background:var(--surface);margin-top:18px}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:15px}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-family:var(--f-mono);font-weight:500;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);background:var(--surface-2)}
+tr:last-child td{border-bottom:0}
+td.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums;text-align:right}
+th.num{text-align:right}
+td s{color:var(--ink-soft)}
+.status{font-size:12.5px;padding:3px 9px;border-radius:999px;background:var(--ok-bg);color:var(--ok)}
+.status.out{background:var(--surface-2);color:var(--ink-soft)}
+.table-note{font-size:13.5px;color:var(--ink-soft);margin-top:10px}
+
+/* ---------- shops ---------- */
+.shops{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.shop{
+  display:flex;flex-direction:column;gap:4px;padding:18px 20px;border-radius:18px;
+  background:var(--surface);border:1px solid var(--line);color:var(--ink);text-decoration:none;
+  transition:border-color .15s,transform .15s;
+}
+.shop:hover{border-color:var(--teal);transform:translateY(-2px)}
+.shop .name{display:flex;justify-content:space-between;align-items:center;gap:8px;font-weight:700;font-size:17px}
+.shop .name .arrow{font-family:var(--f-mono);color:var(--teal);font-weight:400}
+.shop .desc{font-size:14px;color:var(--ink-soft);line-height:1.55}
+.shop.official{background:var(--ok-bg);border-color:transparent}
+@media (prefers-reduced-motion: reduce){.shop{transition:none}.shop:hover{transform:none}}
+
+.stores{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}
+.bars{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.bars li{display:grid;grid-template-columns:110px 1fr 36px;gap:12px;align-items:center;font-size:15px}
+.bars .track{height:12px;border-radius:999px;background:var(--surface-2);overflow:hidden}
+.bars .fill{display:block;height:100%;border-radius:999px;background:var(--teal-fill)}
+.bars .n{font-family:var(--f-mono);text-align:right;font-variant-numeric:tabular-nums}
+.bars .where{grid-column:1 / -1;font-size:13px;color:var(--ink-soft);margin-top:-8px}
+
+.notes{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.notes li{display:grid;grid-template-columns:auto 1fr;gap:12px;font-size:15px;align-items:start}
+.notes li p{color:var(--ink-soft)}
+.notes li b{color:var(--ink)}
+
+.fake{margin-top:18px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.fake div{border:1.5px dashed var(--pink);border-radius:16px;padding:14px 16px;font-size:14.5px;line-height:1.5}
+.fake div b{display:block;color:var(--pink);font-size:15.5px;margin-bottom:2px}
+
+.verdict{
+  margin-top:48px;border-radius:26px;padding:30px 30px;
+  background:var(--ink);color:var(--ground);
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;
+}
+.verdict .eyebrow{color:var(--butter)}
+.verdict h3{font-size:24px;margin-block:6px 8px}
+.verdict p{opacity:.85}
+.verdict a{color:var(--butter)}
+
+/* ---------- sources ---------- */
+.sources{margin-top:64px;padding-top:28px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-soft)}
+.sources h2{font-size:18px;font-weight:700;color:var(--ink);margin-bottom:12px}
+.sources ul{margin:0;padding-left:18px;columns:2;column-gap:40px}
+.sources li{break-inside:avoid;margin-bottom:6px}
+.stamp{margin-top:18px;font-family:var(--f-mono);font-size:12.5px}
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px){
+  .hero{grid-template-columns:1fr}
+  .bottle-stage{max-width:420px}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tactics,.moments,.people,.models,.shops{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fake{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stores,.split,.verdict{grid-template-columns:1fr}
+  .sources ul{columns:1}
+}
+@media (max-width: 600px){
+  body{padding-inline:16px}
+  .hero{padding-block:36px 28px}
+  .chapter-head{grid-template-columns:1fr}
+  .chapter-no{grid-row:auto;font-size:64px}
+  .timeline li{grid-template-columns:1fr;gap:2px}
+  .tactics,.moments,.people,.models,.shops,.fake{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .verdict{padding:24px 20px}
+  .bars li{grid-template-columns:92px 1fr 30px}
+}
+</style>
+
+<div class="wrap" lang="zh-Hant-TW">
+
+<header class="topnav">
+  <a class="brandmark" href="#top">Owala<span>.</span>檔案</a>
+  <nav aria-label="頁面目錄">
+    <a href="#story">發明故事</a>
+    <a href="#marketing">爆紅行銷</a>
+    <a href="#people">誰在用</a>
+    <a href="#taiwan">台灣怎麼買</a>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div>
+    <p class="eyebrow">Owala FreeSip · 美國 · 2020 年上市</p>
+    <h1>立著吸，<span class="l2">傾斜大口喝。</span></h1>
+    <p class="lede">一個蓋子同時做了<b>吸管</b>和<b>直飲口</b>。它來自一家做搖搖杯的家族企業，第一次上市失敗了，後來靠 TikTok 上的一般使用者爆紅，現在是美國成長最快的水壺品牌。這一頁從<b>它是怎麼發明的</b>講起，接著講<b>它是怎麼紅起來的</b>，最後告訴你<b>在台灣去哪裡買</b>。</p>
+    <div class="hero-meta">
+      <span class="chip">TIME 2023 年度最佳發明</span>
+      <span class="chip">2025 Red Dot 設計獎</span>
+      <span class="chip">台灣總代理：Finders</span>
+    </div>
+  </div>
+
+  <figure class="bottle-stage" aria-label="FreeSip 的兩種喝法示意圖" style="margin:0">
+    <svg viewBox="0 0 200 360" role="img" aria-hidden="true">
+      <defs>
+        <clipPath id="bodyClip"><rect x="46" y="104" width="108" height="226" rx="28"/></clipPath>
+      </defs>
+      <g class="bottle">
+        <rect x="74" y="8" width="52" height="44" rx="22" fill="none" stroke="var(--ink)" stroke-width="9"/>
+        <rect x="58" y="40" width="84" height="58" rx="20" fill="var(--pink-fill)"/>
+        <rect x="120" y="34" width="22" height="16" rx="7" fill="var(--pink-fill)"/>
+        <rect x="52" y="94" width="96" height="14" rx="5" fill="var(--ink)"/>
+        <g clip-path="url(#bodyClip)">
+          <rect x="46" y="104" width="108" height="226" fill="var(--teal-fill)"/>
+          <rect x="46" y="272" width="108" height="58" fill="var(--butter)"/>
+          <rect x="66" y="124" width="10" height="130" rx="5" fill="#FFFFFF" opacity=".28"/>
+        </g>
+      </g>
+    </svg>
+    <figcaption class="modes">
+      <div class="mode a"><b>立著拿</b>用內建吸管小口吸<br><small>適合邊走邊喝</small></div>
+      <div class="mode b"><b>傾斜瓶身</b>從寬口大口喝<br><small>適合運動後補水</small></div>
+    </figcaption>
+  </figure>
+</section>
+
+<!-- ============ 第一章 ============ -->
+<section class="chapter" id="story">
+  <div class="chapter-head">
+    <span class="chapter-no" aria-hidden="true">01</span>
+    <p class="eyebrow">第一章 · 發明故事</p>
+    <h2>一個做搖搖杯的家庭，花了七年做一個水壺</h2>
+  </div>
+
+  <ol class="timeline">
+    <li>
+      <span class="t-when">2000</span>
+      <div class="t-body">
+        <h3>在客廳裡創業，做出 BlenderBottle</h3>
+        <p><b>Steve Sorensen 和 Kim Sorensen</b> 夫妻在美國猶他州 Orem 的家裡創業。Steve 發明了搖搖杯裡的彈簧鋼絲球 BlenderBall，BlenderBottle 後來成為全球第一的搖搖杯品牌。公司在 2021 年改名為 Trove Brands。</p>
+      </div>
+    </li>
+    <li>
+      <span class="t-when">靈感</span>
+      <div class="t-body">
+        <h3>顧客根本沒拿來搖高蛋白</h3>
+        <p>他們發現，很多人<b>每天拿 BlenderBottle 當水杯</b>。那乾脆專門做一個好用的水壺。調查時又發現，喝水的人分成兩派，而市面上的水壺只能二選一。</p>
+      </div>
+    </li>
+    <li>
+      <span class="t-when">7 年研發</span>
+      <div class="t-body">
+        <h3>FreeSip 蓋子：吸管和寬口做在同一個出水口</h3>
+        <p>Steve 設計出 FreeSip 蓋子，兒子 <b>Michael Sorensen</b> 負責推動這個專案。前後打磨了大約七年，重點是使用體驗、品質和好不好清洗。2019 年 10 月取得美國設計專利（US D863,877）。</p>
+      </div>
+    </li>
+    <li class="fail">
+      <span class="t-when">首次上市</span>
+      <div class="t-body">
+        <h3>掛在 BlenderBottle 名下賣，失敗</h3>
+        <p>消費者看到 BlenderBottle，就以為是搖搖杯，<b>搞不懂這個瓶子是做什麼的</b>，結果賣得很差。公司決定下架，為它另外建立一個全新品牌。</p>
+      </div>
+    </li>
+    <li>
+      <span class="t-when">2020.03</span>
+      <div class="t-body">
+        <h3>以 Owala 的名字重新上市，碰上疫情</h3>
+        <p>大家更重視健康，也更常帶自己的水壺。網路上出現很多<b>護理師在醫院用 FreeSip 喝水的影片</b>，這是它的第一波曝光。</p>
+      </div>
+    </li>
+    <li>
+      <span class="t-when">2023</span>
+      <div class="t-body">
+        <h3>入選 TIME 雜誌「年度 200 大最佳發明」</h3>
+        <p>同一時期，Owala 連續三年是美國成長最快的水壺品牌。</p>
+      </div>
+    </li>
+    <li>
+      <span class="t-when">2024.01</span>
+      <div class="t-body">
+        <h3>第二代接班</h3>
+        <p>Michael Sorensen 接任 Trove Brands 執行長，創辦人夫妻轉任董事會共同主席。</p>
+      </div>
+    </li>
+    <li>
+      <span class="t-when">2025</span>
+      <div class="t-body">
+        <h3>獲得 Red Dot 紅點設計獎</h3>
+        <p>現在大家討論水壺時，Owala 已經常和 Stanley、Hydro Flask 放在一起比較。</p>
+      </div>
+    </li>
+  </ol>
+
+  <div class="split">
+    <div class="panel">
+      <p class="eyebrow">它解決的問題</p>
+      <h3>喝水的人分成兩派</h3>
+      <div class="versus">
+        <div><b>吸管派</b><small>喜歡小口吸</small></div>
+        <div class="vs">VS</div>
+        <div><b>直飲派</b><small>喜歡大口灌</small></div>
+      </div>
+      <p>Steve 的說法是：有吸管派，也有直飲派，這看起來就是一個需要解決的痛點。FreeSip 讓這兩派用同一個蓋子，不用切換。</p>
+    </div>
+    <div class="panel">
+      <p class="eyebrow">未解之謎</p>
+      <h3>Owala 這個名字是什麼意思？</h3>
+      <p>官方從沒公開過。TikTok 上流行的說法是：用 FreeSip 喝水時，蓋子擋住鼻子，樣子很像無尾熊（koala）。</p>
+      <p>Trove Brands 的一位員工留言說「真希望是，可惜不是」，但官方的正式回應一直在賣關子。2025 年他們還在 Heirloom 款的圖案裡偷偷放了無尾熊當彩蛋。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 第二章 ============ -->
+<section class="chapter" id="marketing">
+  <div class="chapter-head">
+    <span class="chapter-no" aria-hidden="true">02</span>
+    <p class="eyebrow">第二章 · 爆紅行銷</p>
+    <h2>沒有請大明星代言，靠幾千個一般人把它拍紅</h2>
+  </div>
+  <p class="chapter-intro">Owala 不是靠某一個大網紅捧紅的。它主要靠一般使用者和中小型創作者自發分享，再用限量配色製造搶購話題。名人被拍到在用、品牌聯名，都是紅了之後才加上去的。</p>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="num">3,400<small>位</small></div>
+      <p>發過 Owala 內容的創作者</p>
+      <span class="src">Modash</span>
+    </div>
+    <div class="stat">
+      <div class="num">37<small>%</small></div>
+      <p>合作內容平均觀看次數只有 1,000–5,000，大多是小網紅</p>
+      <span class="src">Modash</span>
+    </div>
+    <div class="stat">
+      <div class="num">&lt;1<small>小時</small></div>
+      <p>熱門限量色常常不到一小時就賣完</p>
+      <span class="src">Fortune</span>
+    </div>
+    <div class="stat">
+      <div class="num">2.2<small>萬+</small></div>
+      <p>Reddit r/Owala 社群成員，討論怎麼搶購</p>
+      <span class="src">Fortune</span>
+    </div>
+  </div>
+
+  <div class="sub"><h3>六個關鍵做法</h3></div>
+  <div class="tactics">
+    <div class="tactic">
+      <span class="tag">產品</span>
+      <h3>幾秒鐘就能拍清楚</h3>
+      <p>立著吸、傾斜喝，一個動作就能看懂，不需要文字解釋，天生適合 TikTok 短影音。</p>
+    </div>
+    <div class="tactic">
+      <span class="tag">稀缺</span>
+      <h3>每週推出限量色 Color Drop</h3>
+      <p>每款都有好玩的名字，賣完不補貨。一小時內賣完的會開放預購，10–12 週後出貨。二手市場常加價一倍，稀有款超過 100 美元。</p>
+    </div>
+    <div class="tactic">
+      <span class="tag">網紅</span>
+      <h3>合作幾千個小網紅</h3>
+      <p>主要是送產品、分潤，不花大錢請人代言。合作最穩定的 @dailywithcaroline 在 10 個月裡發了 108 篇。</p>
+    </div>
+    <div class="tactic">
+      <span class="tag">社群</span>
+      <h3>「情緒支持水壺」</h3>
+      <p>使用者自發拍開箱和收藏，年輕人叫它 emotional support water bottle，品牌也順著這個說法做宣傳。</p>
+    </div>
+    <div class="tactic">
+      <span class="tag">聯名</span>
+      <h3>讓不同圈子的人認識它</h3>
+      <p>Disney（Star Wars、Marvel、迪士尼公主）、NASA、Joanna Gaines × Target 的 Hearth &amp; Hand、聖地牙哥動物園。</p>
+    </div>
+    <div class="tactic">
+      <span class="tag">互動</span>
+      <h3>順著網友話題回應</h3>
+      <p>不否認無尾熊理論，反而放進設計裡當彩蛋。使用者用水壺打跑小偷，就寄一個裝滿水壺的保險箱給他。</p>
+    </div>
+  </div>
+
+  <div class="sub"><h3>三次引爆</h3><p>依時間順序</p></div>
+  <div class="moments">
+    <article class="moment">
+      <span class="when">2020 · 疫情期間</span>
+      <h3>護理師在醫院用 FreeSip</h3>
+      <p>剛上市就遇上疫情，醫護人員的日常影片讓它第一次被大量看到。</p>
+    </article>
+    <article class="moment">
+      <span class="when">2024 · TikTok</span>
+      <h3>「用 Owala 喝水像無尾熊」</h3>
+      <p>一支影片說品牌名來自 koala。官方不承認也不否認，讓話題持續發酵。</p>
+      <div class="big">2,700 萬<small>次觀看</small></div>
+    </article>
+    <article class="moment">
+      <span class="when">2025.10 · TikTok / Instagram</span>
+      <h3>用水壺打跑闖空門的小偷</h3>
+      <p>洛杉磯音樂人 Binoy 分享 2024 年的遭遇，水壺被砸凹。官方留言「Not the dent」，還寄去特製的 Sipcurity Safe 保險箱和週末旅行。</p>
+      <div class="big">3,300 萬+<small>兩支 TikTok 影片合計觀看</small></div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 誰在用 ============ -->
+<section class="chapter" id="people">
+  <div class="chapter-head">
+    <span class="chapter-no" aria-hidden="true">03</span>
+    <p class="eyebrow">第三章 · 誰在用</p>
+    <h2>找得到照片或影片的人</h2>
+  </div>
+  <p class="chapter-intro">這裡只放有照片或影片可以查證的人。點連結會開啟原始報導或社群平台頁面，照片的版權屬於原作者。</p>
+
+  <div class="people">
+    <article class="person verified">
+      <div class="person-top">
+        <div>
+          <h3>Hilary Duff</h3>
+          <p class="role">美國演員、歌手</p>
+        </div>
+        <span class="chip ok">已證實</span>
+      </div>
+      <p class="evidence">2023 年起就在用，陸續有<b>白色、橘色、藍綠配粉色</b>，還有孩子用的兒童款。有狗仔照，也有本人發的 Instagram。</p>
+      <ul class="links">
+        <li><a href="https://www.yahoo.com/entertainment/hilary-duff-left-gym-owala-233000059.html" target="_blank" rel="noopener noreferrer">2023.06 洛杉磯健身後的狗仔照（People） <span class="kind">照片 ↗</span></a></li>
+        <li><a href="https://www.spotern.com/en/spot/instagram/hilaryduff/447961/owala-free-sip-worn-by-hilary-duff-in-los-angeles-on-january-24-2024" target="_blank" rel="noopener noreferrer">2024.01.24 本人 Instagram 照片 <span class="kind">照片 ↗</span></a></li>
+      </ul>
+    </article>
+
+    <article class="person verified">
+      <div class="person-top">
+        <div>
+          <h3>Binoy Zachariah</h3>
+          <p class="role">洛杉磯音樂人、TikTok 創作者 @binoymusic</p>
+        </div>
+        <span class="chip ok">已證實</span>
+      </div>
+      <p class="evidence">用 Owala 水壺<b>打跑兩名闖空門的小偷</b>。影片爆紅後，Owala 官方留言，還送他裝滿水壺的保險箱。</p>
+      <ul class="links">
+        <li><a href="https://www.tiktok.com/@binoymusic/video/7562637227713367326" target="_blank" rel="noopener noreferrer">TikTok 主影片：講述事件經過 <span class="kind">影片 ↗</span></a></li>
+        <li><a href="https://www.tiktok.com/@binoymusic" target="_blank" rel="noopener noreferrer">TikTok 帳號 @binoymusic <span class="kind">帳號 ↗</span></a></li>
+        <li><a href="https://www.marketingbrew.com/stories/2025/11/06/how-a-home-invasion-turned-into-marketing-gold-for-owala" target="_blank" rel="noopener noreferrer">Marketing Brew：Owala 怎麼回應 <span class="kind">報導 ↗</span></a></li>
+      </ul>
+    </article>
+
+    <article class="person">
+      <div class="person-top">
+        <div>
+          <h3>Jennifer Lawrence</h3>
+          <p class="role">美國演員</p>
+        </div>
+        <span class="chip warn">媒體報導</span>
+      </div>
+      <p class="evidence">據報導，2025 年夏天她在<b>紐約</b>被拍到用 FreeSip，顏色是 <b>Very, Very Dark</b>。報導裡提到有狗仔照，但我沒辦法直接看到照片內容。</p>
+      <ul class="links">
+        <li><a href="https://www.aol.com/lifestyle/jennifer-lawrences-go-to-water-bottle-is-more-popular-than-stanley-right-now-185110341.html" target="_blank" rel="noopener noreferrer">AOL：她在紐約用 Owala <span class="kind">報導 ↗</span></a></li>
+        <li><a href="https://www.starstyle.com/jennifer-lawrence-york-city-sp839746/" target="_blank" rel="noopener noreferrer">StarStyle：2025.07.23 紐約穿搭 <span class="kind">穿搭 ↗</span></a></li>
+      </ul>
+    </article>
+  </div>
+  <p class="footnote">沒有列入：Gisele Bündchen 和 Margot Robbie 雖然被媒體提到有在用，但報導沒有附上她們拿水壺的照片，也沒寫時間地點，目前無法證實。</p>
+</section>
+
+<!-- ============ 台灣 ============ -->
+<section class="chapter" id="taiwan">
+  <div class="chapter-head">
+    <span class="chapter-no" aria-hidden="true">04</span>
+    <p class="eyebrow">第四章 · 台灣怎麼買</p>
+    <h2>熱門款式、價格，以及可以放心買的地方</h2>
+  </div>
+  <p class="chapter-intro">台灣總代理是 <b>Finders</b>（宏信達實業有限公司）。下面的價格是 2026 年 9 月 Finders 官網的優惠價，會隨時變動，下單前請以商店頁面為準。</p>
+
+  <div class="sub"><h3>最常見的三款</h3></div>
+  <div class="models">
+    <article class="model">
+      <span class="for">第一次買、通勤上學</span>
+      <h3>FreeSip 不鏽鋼<span>710ml / 24oz</span></h3>
+      <div class="price"><span class="now mono">NT$899</span><s>NT$1,199</s></div>
+      <p>最經典、賣得最好的一款，三層不鏽鋼，保冰最久 24 小時。</p>
+      <div class="swatches" aria-label="momo 上的顏色">
+        <span>糖果粉</span><span>玫瑰粉</span><span>繽紛雪酪</span><span>沿海地帶</span><span>蜜桃沙瓦</span>
+      </div>
+      <ul class="links">
+        <li><a href="https://www.momoshop.com.tw/product/15323300" target="_blank" rel="noopener noreferrer">momo 購物網 <span class="kind">購買 ↗</span></a></li>
+        <li><a href="https://www.hola.com.tw/p/016814178" target="_blank" rel="noopener noreferrer">HOLA · 繽紛雪酪 <span class="kind">購買 ↗</span></a></li>
+      </ul>
+    </article>
+
+    <article class="model">
+      <span class="for">開車、健身、整天在外面</span>
+      <h3>FreeSip Sway<span>890ml / 30oz</span></h3>
+      <div class="price"><span class="now mono">NT$1,200</span><s>NT$1,500</s></div>
+      <p>有提把，瓶身上寬下窄好握，放得進車用杯架。另有 535ml（NT$990）。</p>
+      <div class="swatches" aria-label="目前看到的顏色">
+        <span>伯爵奶蓋</span><span>燕麥抹茶</span>
+      </div>
+      <ul class="links">
+        <li><a href="https://www.momoshop.com.tw/product/15324139" target="_blank" rel="noopener noreferrer">momo · 伯爵奶蓋 <span class="kind">購買 ↗</span></a></li>
+        <li><a href="https://www.eslite.com/product/10052271402683097125009" target="_blank" rel="noopener noreferrer">誠品線上 · 燕麥抹茶 <span class="kind">購買 ↗</span></a></li>
+      </ul>
+    </article>
+
+    <article class="model">
+      <span class="for">運動、學生、預算有限</span>
+      <h3>FreeSip Tritan<span>740ml / 25oz</span></h3>
+      <div class="price"><span class="now mono">NT$599</span><s>NT$799</s></div>
+      <p>塑膠瓶身，輕、耐摔、透明，但<b>不保冰</b>。顏色最多，HOLA 上選擇最齊全。</p>
+      <div class="swatches" aria-label="HOLA 上的顏色">
+        <span>奶茶</span><span>柔光粉</span><span>冰河白</span><span>蝶豆紫</span><span>泡泡藍</span><span>無人島</span><span>極夜黑</span>
+      </div>
+      <ul class="links">
+        <li><a href="https://www.hola.com.tw/p/016814185" target="_blank" rel="noopener noreferrer">HOLA · 奶茶 <span class="kind">購買 ↗</span></a></li>
+        <li><a href="https://www.hola.com.tw/p/014425080" target="_blank" rel="noopener noreferrer">HOLA · 極夜黑 <span class="kind">購買 ↗</span></a></li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="sub"><h3>完整價格表</h3><p>Finders 官網，2026 年 9 月</p></div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>款式</th><th>容量</th><th class="num">優惠價</th><th class="num">原價</th><th>官網狀態</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>FreeSip 不鏽鋼</td><td class="mono">480ml</td><td class="num">NT$799</td><td class="num"><s>NT$1,199</s></td><td><span class="status">有貨</span></td></tr>
+        <tr><td>FreeSip 不鏽鋼</td><td class="mono">710ml</td><td class="num">NT$899</td><td class="num"><s>NT$1,199</s></td><td><span class="status">有貨</span></td></tr>
+        <tr><td>FreeSip Tritan</td><td class="mono">740ml</td><td class="num">NT$599</td><td class="num"><s>NT$799</s></td><td><span class="status out">售完</span></td></tr>
+        <tr><td>FreeSip Sway</td><td class="mono">535ml</td><td class="num">NT$990</td><td class="num"><s>NT$1,200</s></td><td><span class="status">有貨</span></td></tr>
+        <tr><td>FreeSip Sway</td><td class="mono">890ml</td><td class="num">NT$1,200</td><td class="num"><s>NT$1,500</s></td><td><span class="status">有貨</span></td></tr>
+        <tr><td>FreeSip 特別版</td><td class="mono">不同容量</td><td class="num">NT$1,090–1,200</td><td class="num"><s>NT$1,500</s></td><td><span class="status">有貨</span></td></tr>
+        <tr><td>Sway 特別版</td><td class="mono">不同容量</td><td class="num">NT$1,450</td><td class="num"><s>NT$1,850</s></td><td><span class="status">有貨</span></td></tr>
+        <tr><td>FreeSip Tumbler</td><td class="mono">890ml</td><td class="num">NT$1,200</td><td class="num"><s>NT$1,500</s></td><td><span class="status out">售完</span></td></tr>
+        <tr><td>FreeSip Twist</td><td class="mono">530 / 710ml</td><td class="num">—</td><td class="num"><s>NT$699–899</s></td><td><span class="status out">售完</span></td></tr>
+        <tr><td>SmoothSip 咖啡杯</td><td class="mono">360 / 600ml</td><td class="num">NT$750 / 850</td><td class="num"><s>NT$1,200 / 1,300</s></td><td><span class="status out">售完</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="table-note">FreeSip 系列不能裝熱飲或氣泡飲料。想裝熱咖啡，請選 SmoothSip 咖啡杯。官網售完的款式，其他授權通路可能還有貨。</p>
+
+  <div class="sub"><h3>授權網路商店</h3><p>都在總代理公布的授權名單上</p></div>
+  <div class="shops">
+    <a class="shop official" href="https://www.finders.com.tw/pages/owala" target="_blank" rel="noopener noreferrer">
+      <span class="name">Finders 官網 <span class="arrow">↗</span></span>
+      <span class="desc">台灣總代理直營。價格、配件（替換蓋、吸管、矽膠圈）最齊全。</span>
+    </a>
+    <a class="shop" href="https://www.momoshop.com.tw/search/owala" target="_blank" rel="noopener noreferrer">
+      <span class="name">momo 購物網 <span class="arrow">↗</span></span>
+      <span class="desc">FreeSip 710ml、Sway 890ml 都有，出貨快。</span>
+    </a>
+    <a class="shop" href="https://www.eslite.com/exhibitions/CU202211-00209" target="_blank" rel="noopener noreferrer">
+      <span class="name">誠品線上 <span class="arrow">↗</span></span>
+      <span class="desc">Owala 專區，有不鏽鋼、Tritan、Sway 和咖啡杯，偶爾會大補貨。</span>
+    </a>
+    <a class="shop" href="https://www.hola.com.tw/HOLA_Housewares/c/EC_30000972" target="_blank" rel="noopener noreferrer">
+      <span class="name">HOLA 線上購物 <span class="arrow">↗</span></span>
+      <span class="desc">Tritan 740ml 顏色最多。這是水壺分類頁，Owala 在裡面。</span>
+    </a>
+    <a class="shop" href="https://24h.pchome.com.tw/search/?q=owala" target="_blank" rel="noopener noreferrer">
+      <span class="name">PChome 24h <span class="arrow">↗</span></span>
+      <span class="desc">搜尋結果裡有不同賣家，下單前先看賣家是不是官方。</span>
+    </a>
+    <a class="shop" href="https://www.finders.com.tw/pages/owala-distributionchannel" target="_blank" rel="noopener noreferrer">
+      <span class="name">蝦皮官方商店 <span class="arrow">↗</span></span>
+      <span class="desc">只有 finders.tw 和 giftcabinet 兩家是授權賣家。點這裡看總代理公布的商店連結。</span>
+    </a>
+  </div>
+
+  <div class="sub"><h3>實體門市</h3><p>全台約 46 家，分布在 11 個縣市</p></div>
+  <div class="stores">
+    <div class="panel">
+      <ul class="bars">
+        <li><span>誠品生活</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="n">19</span></li>
+        <li class="where">門市最多，主要在北部，台北 5 家</li>
+        <li><span>HOLA 特力和樂</span><span class="track"><span class="fill" style="width:89%"></span></span><span class="n">17</span></li>
+        <li class="where">全台都有，2026 年 8 月補貨時排過隊</li>
+        <li><span>ARTIFACTS</span><span class="track"><span class="fill" style="width:26%"></span></span><span class="n">5</span></li>
+        <li class="where">台北 4 家、台中 1 家</li>
+        <li><span>JKS</span><span class="track"><span class="fill" style="width:21%"></span></span><span class="n">4</span></li>
+        <li class="where">台北、台中、台南</li>
+        <li><span>YeDAO</span><span class="track"><span class="fill" style="width:5%"></span></span><span class="n">1</span></li>
+        <li class="where">桃園</li>
+      </ul>
+      <p class="table-note" style="margin-top:16px"><a href="https://www.finders.com.tw/pages/owala-store-info" target="_blank" rel="noopener noreferrer">查看總代理公布的門市地址 ↗</a></p>
+    </div>
+    <div class="panel">
+      <h3>出發前先看</h3>
+      <ul class="notes" style="margin-top:12px">
+        <li><span class="chip warn">缺貨</span><p>2026 年 8 月有一波搶購，<b>各店庫存不穩定</b>，去之前最好先打電話問。</p></li>
+        <li><span class="chip">配件</span><p>實體門市<b>不賣</b>替換蓋、吸管、矽膠圈，要到網路上買。</p></li>
+        <li><span class="chip">7-11</span><p>之前的加價購、集點活動（NT$499–749）<b>已經結束</b>，官方說限量款不會再出。</p></li>
+        <li><span class="chip">好市多</span><p>目前線上沒有上架 Owala，也<b>不在授權名單</b>上。想去實體賣場，先打電話問。</p></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sub"><h3>怎麼避免買到假貨</h3><p>總代理提醒的四個特徵</p></div>
+  <div class="fake">
+    <div><b>奇怪的卡通聯名</b>官方從沒出過的角色合作款</div>
+    <div><b>容量不對</b>不是官方有的尺寸規格</div>
+    <div><b>包裝印刷粗糙</b>顏色、清晰度明顯較差</div>
+    <div><b>字體排版怪</b>字體或版面設計跟正品不同</div>
+  </div>
+  <p class="table-note">價格明顯比較便宜的平行輸入貨，除了有假貨風險，在台灣通常也沒有保固。</p>
+
+  <div class="verdict">
+    <div>
+      <p class="eyebrow">第一次買</p>
+      <h3>先去實體門市試 FreeSip 710ml</h3>
+      <p>到誠品或 HOLA 拿起來試試重量和單手開蓋的手感，再決定顏色。價格 NT$899。</p>
+    </div>
+    <div>
+      <p class="eyebrow">常開車或健身</p>
+      <h3>直接選 Sway 890ml</h3>
+      <p>有提把，放得進杯架，容量夠一整個下午。價格 NT$1,200。<a href="https://www.momoshop.com.tw/product/15324139" target="_blank" rel="noopener noreferrer">去 momo 看 ↗</a></p>
+    </div>
+  </div>
+</section>
+
+<footer class="sources">
+  <h2>資料來源</h2>
+  <ul>
+    <li><a href="https://fortune.com/2025/03/15/owala-water-bottle-gen-z-explosion/" target="_blank" rel="noopener noreferrer">Fortune：Owala 與 Z 世代的成功故事</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Owala_(brand)" target="_blank" rel="noopener noreferrer">Wikipedia：Owala (brand)</a></li>
+    <li><a href="https://trovebrands.com/pages/trove-brands-primes-for-leadership-transition" target="_blank" rel="noopener noreferrer">Trove Brands：領導層交接公告</a></li>
+    <li><a href="https://time.com/collections/best-inventions-2023/6324400/owala-freesip/" target="_blank" rel="noopener noreferrer">TIME：2023 年度最佳發明</a></li>
+    <li><a href="https://www.yahoo.com/lifestyle/articles/viral-owala-bottle-theory-actually-165900466.html" target="_blank" rel="noopener noreferrer">Yahoo：Owala 無尾熊理論</a></li>
+    <li><a href="https://www.modash.io/breakdowns/owala-influencer-marketing-strategy" target="_blank" rel="noopener noreferrer">Modash：Owala 網紅行銷數據</a></li>
+    <li><a href="https://www.chowhound.com/2131380/owala-water-bottle-color-drops-what-to-know/" target="_blank" rel="noopener noreferrer">Chowhound：Color Drop 介紹</a></li>
+    <li><a href="https://www.sheknows.com/living/articles/1234724487/joanna-gaines-owala-water-bottle/" target="_blank" rel="noopener noreferrer">SheKnows：Joanna Gaines × Owala</a></li>
+    <li><a href="https://dailydot.com/man-fought-home-invaders-owala-bottle" target="_blank" rel="noopener noreferrer">Daily Dot：音樂人用 Owala 擊退闖入者</a></li>
+    <li><a href="https://www.marketingbrew.com/stories/2025/11/06/how-a-home-invasion-turned-into-marketing-gold-for-owala" target="_blank" rel="noopener noreferrer">Marketing Brew：闖空門事件如何變成行銷機會</a></li>
+    <li><a href="https://www.finders.com.tw/pages/owala" target="_blank" rel="noopener noreferrer">Finders：Owala 台灣總代理</a></li>
+    <li><a href="https://www.finders.com.tw/pages/owala-distributionchannel" target="_blank" rel="noopener noreferrer">Finders：授權通路</a></li>
+    <li><a href="https://www.nownews.com/news/6871963" target="_blank" rel="noopener noreferrer">NOWnews：台灣哪裡買、怎麼分辨假貨</a></li>
+    <li><a href="https://bottlenametag.com/blog/owala-where-to-buy-taiwan/" target="_blank" rel="noopener noreferrer">認瓶：Owala 台灣哪裡買（2026）</a></li>
+    <li><a href="https://www.roomie.tw/posts/158294" target="_blank" rel="noopener noreferrer">Roomie：7-11 Owala 活動</a></li>
+    <li><a href="https://www.costco.com.tw/Owala/c/owala" target="_blank" rel="noopener noreferrer">Costco 台灣：Owala 分類</a></li>
+  </ul>
+  <p class="stamp">資料整理於 2026-09-15 · 價格與庫存會變動，請以各商店頁面為準</p>
+</footer>
+
+</div>
