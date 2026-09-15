@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<title>網頁縮圖原稿</title>
+<!-- 這是網頁縮圖（og-image.png）的原稿，用 scripts/render-og.sh 轉成 1200×630 的 PNG。
+     水壺是自己畫的通用插圖，沒有使用 Owala 的商標或產品照片。 -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=IBM+Plex+Mono:wght@500&family=Noto+Sans+TC:wght@500;900&display=swap">
+<style>
+  html,body{margin:0;width:1200px;height:630px;overflow:hidden}
+  body{
+    background:#EEF4F3;color:#10292A;
+    font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;
+    display:grid;grid-template-columns:1fr 430px;
+    position:relative;
+  }
+  .text{padding:72px 0 64px 80px;display:flex;flex-direction:column}
+  .eyebrow{font-family:"IBM Plex Mono",Consolas,monospace;font-weight:500;font-size:22px;letter-spacing:.14em;color:#4E6766}
+  h1{margin:26px 0 0;font-weight:900;font-size:104px;line-height:1.02;letter-spacing:-.02em}
+  h1 span{display:block;color:#0B7F77}
+  .tags{margin-top:34px;display:flex;gap:12px}
+  .tags b{font-weight:500;font-size:26px;padding:10px 20px;border-radius:999px;background:#E1ECEA}
+  .url{margin-top:auto;font-family:"IBM Plex Mono",Consolas,monospace;font-size:22px;color:#4E6766}
+  .art{position:relative;background:#DCEBE8;border-left:2px solid #C9D9D6;display:grid;place-items:center;overflow:hidden}
+  .drops{position:absolute;inset:0}
+  .drops i{position:absolute;width:34px;height:34px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#12A195;opacity:.18}
+  svg{width:300px;height:auto;transform:rotate(-14deg);transform-origin:50% 90%;filter:drop-shadow(0 26px 30px rgba(16,41,42,.22))}
+</style>
+</head>
+<body>
+  <div class="text">
+    <div class="eyebrow">OWALA FREESIP · 台灣購買指南</div>
+    <h1>Owala<span>水壺檔案</span></h1>
+    <div class="tags"><b>發明故事</b><b>爆紅行銷</b><b>台灣怎麼買</b></div>
+    <div class="url">lachusi21.github.io/owala-guide</div>
+  </div>
+  <div class="art">
+    <div class="drops" aria-hidden="true">
+      <i style="left:52px;top:70px"></i>
+      <i style="left:330px;top:120px;width:24px;height:24px"></i>
+      <i style="left:70px;top:470px;width:22px;height:22px"></i>
+      <i style="left:350px;top:500px"></i>
+    </div>
+    <svg viewBox="0 0 200 360" aria-hidden="true">
+      <defs><clipPath id="c"><rect x="46" y="104" width="108" height="226" rx="28"/></clipPath></defs>
+      <rect x="74" y="8" width="52" height="44" rx="22" fill="none" stroke="#10292A" stroke-width="9"/>
+      <rect x="58" y="40" width="84" height="58" rx="20" fill="#F2638A"/>
+      <rect x="120" y="34" width="22" height="16" rx="7" fill="#F2638A"/>
+      <rect x="52" y="94" width="96" height="14" rx="5" fill="#10292A"/>
+      <g clip-path="url(#c)">
+        <rect x="46" y="104" width="108" height="226" fill="#12A195"/>
+        <rect x="46" y="272" width="108" height="58" fill="#F3C23F"/>
+        <rect x="66" y="124" width="10" height="130" rx="5" fill="#FFFFFF" opacity=".28"/>
+      </g>
+    </svg>
+  </div>
+</body>
+</html>

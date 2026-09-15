@@ -13,8 +13,29 @@
 | 檔案 | 用途 |
 |---|---|
 | `owala.html` | 網頁內容。要修改網站，改這個檔案就好 |
-| `scripts/build.sh` | 把 `owala.html` 包成完整的 HTML，輸出到 `dist/index.html` |
+| `assets/og-image.html` | 網頁縮圖的原稿（分享連結時顯示的圖片） |
+| `assets/og-image.png` | 網頁縮圖成品，1200 × 630 |
+| `scripts/build.sh` | 把 `owala.html` 包成完整的 HTML，加上縮圖標籤，輸出到 `dist/` |
+| `scripts/render-og.sh` | 把縮圖原稿截圖成 PNG（需要本機有 Chrome 或 Edge） |
 | `.github/workflows/deploy.yml` | 自動部署設定 |
+
+## 網頁縮圖
+
+在 LINE、Facebook、Threads、X 分享網址時，會顯示 `assets/og-image.png` 這張縮圖。
+圖上的水壺是自己畫的通用插圖，沒有使用 Owala 的商標或產品照片，避免版權問題。
+
+要修改縮圖：
+
+1. 編輯 `assets/og-image.html`
+2. 重新產生圖片：
+
+   ```bash
+   bash scripts/render-og.sh
+   ```
+
+3. 提交 `assets/og-image.png` 並 push
+
+社群平台會快取縮圖。如果換圖後分享時還是舊圖，可以用 [Facebook 分享偵錯工具](https://developers.facebook.com/tools/debug/) 重新抓取。
 
 ## 自動部署怎麼運作
 
